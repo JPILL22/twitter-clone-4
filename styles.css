@@ -63,10 +63,61 @@ body {
     cursor: pointer;
 }
 .sidebar__tweet:hover {
-    background-color: #1380c9;
+    background-color: #3084bd;
     border-radius: 30px;
     color: white;
     transition: color 100ms ease-out;
+}
+.Account_profile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    background-color: #f7e4e4;
+    border: none;
+    color: #ccd6dd;
+    font-weight: 900;
+    border-radius: 56px;
+    height: 59px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.Account_profile:hover {
+    background-color: rgb(204, 185, 185);
+}
+
+.Account_profile .material-symbols-outlined {
+    font-size: 39px;
+    align-items: center;
+    padding-top: 7px;
+    color: rgb(100, 92, 92);
+    forced-color-adjust: gray;
+}
+
+.Account_profile h2 {
+    font-size: 15px;
+    justify-content: space-between;
+    color: black;
+    padding: 0px;
+    margin: 20px 0px 0px 0px;
+    border: 0;
+
+} 
+
+.Account_profile h2 p {
+    color: #839297;
+    margin: 0;
+    text-align: left;
+}
+
+.Account_profile .material-icons {
+    font-size: 25px;
+    align-items: center;
+    padding-top: 18px;
+    margin-left: 18px;
+    color: black;
+    cursor: pointer;
 }
 
 body {
@@ -76,16 +127,17 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
+    box-align: stretch;
+    align-items: stretch;
 }
 
 .sidebar_top {
-    border-right: 1px solid var(--twitter-color);
+    border-right: 1px solid #dee1e6;
     flex: 0.2;
-    min-width: 250px;
-    margin-top: 20px;
-    padding-left: 20px;
     padding-right: 20px;
     font-family: 'Roboto', sans-serif;
+    background: #ffffff;
+    height: auto;
 }
 
 .fa-twitter {
@@ -99,11 +151,11 @@ body {
     flex: 0.5;
     border-right: 1px solid var(--twitter-background);
     min-width: fit-content;
-    overflow-y: scroll;
 }
 
 .feed_header {
     position: sticky;
+    overflow-y: visible;
     top: 0;
     background-color: white;
     z-index: 100;
@@ -121,7 +173,7 @@ body {
 }
 
 .feed {
-    -ms-overflow-style: none;
+   
     scrollbar-width: none;
 }
 
@@ -167,6 +219,47 @@ body {
     margin-left: auto;
 }
 
+.account-profile_button {
+    background-color: var(--twitter-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+.account_headerText .material-symbols-outlined {
+   font-display: 50%;
+    display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding-right: 20vh;
+   margin: 0;
+   padding: 0;
+   align-items: flex-start;
+   border: none;
+
+   
+}
+.account_headerTextspecial {
+    font-weight: 600;
+    font-size: 5px;
+    color: gray;
+}
+
+.account_headerText h3 {
+    font-size: 5px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.account_headerdescription {
+    margin-bottom: 10px;
+    font-size: 5px;
+}
 
 .post_avatar img {
     border-radius: 50%;
@@ -232,14 +325,17 @@ body {
 }
 
 .widgets_input {
-    display: flex;
+    position: sticky;
+    overflow-y: visible;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--twitter-background);
+    padding: 15px 20px;
+    height: 55px;
     align-items: center;
-    background-color: var(--twitter-background);
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 20px;
 }
+
 .widgets_input input {
     border: none;
     background-color: var(--twitter-background);
@@ -248,6 +344,8 @@ body {
 
 .widgets__searchicon {
     color: gray;
+    height: 20px;
+    padding-bottom: 200px;
 }
 
 .widgets_widgetContainer {
@@ -261,3 +359,4 @@ body {
     font-size: 18px;
     font-weight: 800;
 }
+
