@@ -1,0 +1,32 @@
+.searcher {
+    display: flex;
+    flex-direction: column;
+}
+
+.searcher .widgets_input {
+    margin-bottom: 15px;
+}
+
+.widgets_input {
+    display: flex;
+    align-items: center;
+    height: 12px;
+    margin-left: 15px;
+    max-width: 340px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px;
+    padding-left: 25px;
+    background: #e7eaec;
+    border-radius: 150px
+}
+
+.widgets_input input {
+    background: #e7eaec;
+    border: none;
+}
+
+.widgets__searchicon {
+    background: #e7eaec;
+}

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home / Twitter</title>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,192 +12,314 @@
       rel="stylesheet">
     <link rel="icon" href="./Assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="trends.css">
+    <link rel="stylesheet" href="follow.css">
+    <link rel="stylesheet" href="tweetbox.css">
+    <link rel="stylesheet" href="widgets.css">
 </head>
 <body>
-    <div class="sidebar_top">
-        <i class="fab fa-twitter"></i>
-        <div class="sidebarOption active">
-            <span class="material-symbols-outlined"> house </span>
-            <h2>Home</h2>
+    <div class="layout">
+        <div class="layout__left-sidebar">
+            <div class="sidebar-menu">
+                <i class="fab fa-twitter"></i>
+                <div class="sidebar-menu__items-active">
+                    <span class="material-symbols-outlined"> house </span>
+                    <h2>Home</h2>
+                </div>
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> numbers </span>
+                    <h2>Explore</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> notifications </span>
+                    <h2>Notification</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> mail </span>
+                    <h2>Messages</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> bookmark </span>
+                    <h2>Bookmarks</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> article </span>
+                    <h2>Lists</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> perm_identity </span>
+                    <h2>Profile</h2>
+                </div>
+        
+                <div class="sidebar-menu__items">
+                    <span class="material-symbols-outlined"> pending </span>
+                    <h2>More</h2>
+                </div>
+                <div>
+                    <button class="sidebar__tweet">Tweet</button>
+                <button class="Account_profile">  <span class="material-symbols-outlined">
+                    account_circle
+                    </span>
+                    <h2>UNKNOWN USER<p>@user_?</p></h2>
+                    <span class="material-icons"> more_horiz </span>
+                    </button>
+                </div>
+            </div>
         </div>
+        <div class="contaner">
+            <div class="feed">
+                <div class="feed_header">
+                    <h2>Home</h2>
+                    <span class="material-symbols-outlined">
+                        auto_awesome
+                        </span>
+                </div>
+        
+                <div class="tweetBox">
+                    <form>
+                        <div class="tweetbox__input">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAACKCAMAAABCWSJWAAAAMFBMVEXk5ueutLfh4+Sor7Ln6erc3+CrsbXM0NK4vcC8wcOxt7rGysy0urzX2tzU19nq7O0U2FBaAAADJ0lEQVR4nO2a25KkIAxAuQQVQfz/v13QnpnuHVuTtEFrivPo06kEIoQo1Wg0Go1Go9FoNBqNxl8CAIxzRsEMl2ook8IQx0IcwpSFrhLpfWc7/UVnR5/gAhlw4UnjW0f3tSMDKujfIovMmKq6wDTaTZGC9TUD078XWbJULTDgd02KTCUX8Nur5CVJfRUXhEmOSwWXOWBMclzEcwT7K/Y5Lk7YxeFiUlQGWRMY0Cq6C7OkSY83ycvFCKrM2IWy4uVMALl7vlPkxFQMSSSreKlNBImWn4xUWGCgmnRBSMVRTbSOMhmi7eQVof2M+SP/UpH5EwFZJBNEVAx5/2RkfkQTR2WUWCz448ELEpWFWvVXRGo/T8VOEiqeYfL3VW6UIJ6KyLK9z2a+UYm7U+Fn/Q5ljpScQ4LQ1flGRyfOgXIUOvJDpJqIHbMZlUXsTka9kulBrK9Brf12Emyx3Ob6TgyLyK/wB8Imkm31KJjwYYmSnZ7iErDLRXTNLszIbpx8szSDculkbqj/ARHRWK9igjkt1GirPzhYuxVN1JzevJEtyYmm5jsZGN+9ebDTfUWPhXnyW8+YNlQNyZeMCfH1cVcP/RWPuwVQrvfjwyT65K568l5tZlDGXT0JADkZpmg8MGb9Vl3DTH3wZR5Bdwu6jCV436cymFDJJ1ukMHTWbu7m8j2G3inpdJVghKh36tvqk2Pkk+TcBuRaMm4Uk20dq73Q1oYymkG8B3XWT6eHBtQ0HKVlO1Xx3CkSmNPAajkV7HiiDKSR04Z7Cs1JMmAIb8vvZE6Zr8Ef8Xexw6d/bHCf5eaH7sOj3cxoNL2X8fwyA4q/bzZdNPeWBg5xyyDK8FYv4OdD8LAGjyAJmLDuajBJiGjGDRbcqQv2GWqOGC1aNLQCg7mhf+BCGMjidPNJoPtRjDkVGvgRG3KnmO6ScCazdHqKCyosgvv4SQVVXehjRCwwK7dGUHBhqbFSCiMiKFVESs09XClnntt2OXwrwjarP8ceJqjKol1UDk50wHrtZ3FU/XnjGDwOZgR48zI8jiYn6pTalf33PKNtPQ4GfkxF9k0ajUaj0ajGP8AKJjy1Wo+pAAAAAElFTkSuQmCC" 
+                            alt=""
+                            />
+                            <input type="text" placeholder="what's happening?" />
+                        </div>
 
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> numbers </span>
-            <h2>Explore</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> notifications </span>
-            <h2>Notification</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> mail </span>
-            <h2>Messages</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> bookmark </span>
-            <h2>Bookmarks</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> article </span>
-            <h2>Lists</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> perm_identity </span>
-            <h2>Profile</h2>
-        </div>
-
-        <div class="sidebarOption">
-            <span class="material-symbols-outlined"> pending </span>
-            <h2>More</h2>
-        </div>
-        <div>
-            <button class="sidebar__tweet">Tweet</button>
-        <button class="Account_profile">  <span class="material-symbols-outlined">
-            account_circle
-            </span>
-            <h2>UNKNOWN USER <br> <p>@user_?</p></h2>
-            
-            <span class="material-icons"> more_horiz </span>
-            </button>
-        </div>
-    </div>
-    <div class="feed">
-        <div class="feed_header">
-            <h2>Home</h2>
-        </div>
-
-        <div class="tweetBox">
-            <form>
-                <div class="tweetbox__input">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAACKCAMAAABCWSJWAAAAMFBMVEXk5ueutLfh4+Sor7Ln6erc3+CrsbXM0NK4vcC8wcOxt7rGysy0urzX2tzU19nq7O0U2FBaAAADJ0lEQVR4nO2a25KkIAxAuQQVQfz/v13QnpnuHVuTtEFrivPo06kEIoQo1Wg0Go1Go9FoNBqNxl8CAIxzRsEMl2ook8IQx0IcwpSFrhLpfWc7/UVnR5/gAhlw4UnjW0f3tSMDKujfIovMmKq6wDTaTZGC9TUD078XWbJULTDgd02KTCUX8Nur5CVJfRUXhEmOSwWXOWBMclzEcwT7K/Y5Lk7YxeFiUlQGWRMY0Cq6C7OkSY83ycvFCKrM2IWy4uVMALl7vlPkxFQMSSSreKlNBImWn4xUWGCgmnRBSMVRTbSOMhmi7eQVof2M+SP/UpH5EwFZJBNEVAx5/2RkfkQTR2WUWCz448ELEpWFWvVXRGo/T8VOEiqeYfL3VW6UIJ6KyLK9z2a+UYm7U+Fn/Q5ljpScQ4LQ1flGRyfOgXIUOvJDpJqIHbMZlUXsTka9kulBrK9Brf12Emyx3Ob6TgyLyK/wB8Imkm31KJjwYYmSnZ7iErDLRXTNLszIbpx8szSDculkbqj/ARHRWK9igjkt1GirPzhYuxVN1JzevJEtyYmm5jsZGN+9ebDTfUWPhXnyW8+YNlQNyZeMCfH1cVcP/RWPuwVQrvfjwyT65K568l5tZlDGXT0JADkZpmg8MGb9Vl3DTH3wZR5Bdwu6jCV436cymFDJJ1ukMHTWbu7m8j2G3inpdJVghKh36tvqk2Pkk+TcBuRaMm4Uk20dq73Q1oYymkG8B3XWT6eHBtQ0HKVlO1Xx3CkSmNPAajkV7HiiDKSR04Z7Cs1JMmAIb8vvZE6Zr8Ef8Xexw6d/bHCf5eaH7sOj3cxoNL2X8fwyA4q/bzZdNPeWBg5xyyDK8FYv4OdD8LAGjyAJmLDuajBJiGjGDRbcqQv2GWqOGC1aNLQCg7mhf+BCGMjidPNJoPtRjDkVGvgRG3KnmO6ScCazdHqKCyosgvv4SQVVXehjRCwwK7dGUHBhqbFSCiMiKFVESs09XClnntt2OXwrwjarP8ceJqjKol1UDk50wHrtZ3FU/XnjGDwOZgR48zI8jiYn6pTalf33PKNtPQ4GfkxF9k0ajUaj0ajGP8AKJjy1Wo+pAAAAAElFTkSuQmCC" 
-                    alt=""
+                    </span>
+                    <div class="footer__icons">
+                        <span class="material-symbols-outlined">
+                            imagesmode </span>
+                        <span class="material-symbols-outlined">
+                                gif_box </span>
+                        <span class="material-symbols-outlined">
+                            drag_handle </span>
+                        <span class="material-symbols-outlined">
+                            sentiment_satisfied</span>
+                        <span class="material-symbols-outlined">
+                            event_repeat</span>
+                        <span class="material-symbols-outlined">
+                            location_on</span>
+                                        <button class="tweetBox__tweetButton">Tweet</button>       
+                                    </div>
+                    </form>
+                </div>
+        
+                <div class="post">
+                    <div class="post_avatar">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB7CAMAAACFMMQJAAAAY1BMVEX///8HCQgAAADe3t64uLj6+vqTk5Ofn5+kpKTHx8eFhYXr6+t/f389PT0ABQPY2NgwMDBxcXGZmZnOzs43NzdJSUnx8fGLi4smJiYdHR1hYWEVFRVQUFBra2uwsLB5eXlZWVkaT/i9AAADyklEQVRogcWb24KqMAxFaQAVuYsoF2///5XTggedcY6mYXfYDz7OSkubprsZzxPJDzbrTVB5XZ9UXhXK/ohUwZ5GNan+Sc594v8VOvajdUuZMsqI9C/pYLLd38zAtjGjVt9EJpBT7B4eX84/0I8YascfIN4ULwN/5tPJKf74hj0GcPYiZ/Tq9h5u+ElzcURPPo19/ACUu4DHewZ8CKBwgV/VTLyiqtzC8TsuXVFKBTwFXbiTr/kZrcH0oGDTTQDqAKWvOKv+mQ/dfpf7CcPHb70c9v0PtnSz/HDp72o38wOfYIOPrQdv+KsAtPxyCV6PP4DQw5P93OvyQ4FO/0hC16NvMfybDK8wqdfvhXhFOwD+Qp2Qvt8A8Od6K539FQBfRKKVP/ABOz/ypXRFx/l46cZToLW/Ec99jZj9RIxvIgC+lE8+4tY3A49Iu+LJV5Abx3pZfGBZZj7oCaLg8En49THV/iGV7XyqETlfn3mytEsRyG0JJXhUtaMlqTgoRdH1HUuAxxS6ntl69pU27VdthcELbjkmAEi144mzPgp/FOIRla4nLjhQi0+WdjLIcW8ku2M2ILps7UHq3EGiYpdA215LCfwNXNL1/mviv8EDrc2LAA+01itrfAYpc++KG1s+pUhjM7XGd0C6/c5HnTejKltTF/nptaLAytJOcDnnLr6hDzxtHrK4bLl4z7GwduGvGUZsfzFTLh7T2Oce1Q7o/NyDfUqZxBw+FdiHpEm8cxdV4b4oZj3j9o4Gb65bDDzCSf5Vodd+5COLrBd9vmpT4hD/efKpdEdn+BwuJ59x3aLWHZ6TeMgdntNEAK5znsXxORxlfK2QU/G423kxJ+fT3lXzGM/mcPbxeU9qrmafed7DHq9/iNs5RFcXdL7BhTNUH7JwWAhf6loZu4Q0F7Ryy3fkjDrc+svP9s9JRCUmAL8kia+YkbrODyAvpQ9ppot3ZgBVJxr5UwCdeBOEl0I88klEqSgLHNb9fPgYQLuxvXn4xwYDHwNoVhZ+R5hfWxx8DKC9Mjv4/F39rhdaHADVu4/7IDq2DthTBM3qjeVVbZUz9hRBf/x9K1Ynx+wpgttrAPF1VoKxkU5GPzsL8s9XZ6So+LYKbT3b+fznepjlmqD5j/kXN6XN4d/+0QVPNQj+/Sg6WPV/4/DpmIXFPWlz+cPwQ+uHGhT+NG66ZeiKerP5pK2gAL5xIJdZeAP+ZtyqP0r1v+DbkOXTOuNXFv/y4gAfzGiGBOB3i+T7CV967XJ0s/QXW/daWeMtSNdaMOsM+G5ZvKQXEKWs+AI64zb5qEdoQAAAAABJRU5ErkJggg==" 
+                        alt=""
                     />
-                    <input type="text" placeholder="what's happening?" />
                 </div>
-                <button class="tweetBox__tweetButton">Tweet</button>
-            </form>
-        </div>
-
-        <div class="post">
-            <div class="post_avatar">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB7CAMAAACFMMQJAAAAY1BMVEX///8HCQgAAADe3t64uLj6+vqTk5Ofn5+kpKTHx8eFhYXr6+t/f389PT0ABQPY2NgwMDBxcXGZmZnOzs43NzdJSUnx8fGLi4smJiYdHR1hYWEVFRVQUFBra2uwsLB5eXlZWVkaT/i9AAADyklEQVRogcWb24KqMAxFaQAVuYsoF2///5XTggedcY6mYXfYDz7OSkubprsZzxPJDzbrTVB5XZ9UXhXK/ohUwZ5GNan+Sc594v8VOvajdUuZMsqI9C/pYLLd38zAtjGjVt9EJpBT7B4eX84/0I8YascfIN4ULwN/5tPJKf74hj0GcPYiZ/Tq9h5u+ElzcURPPo19/ACUu4DHewZ8CKBwgV/VTLyiqtzC8TsuXVFKBTwFXbiTr/kZrcH0oGDTTQDqAKWvOKv+mQ/dfpf7CcPHb70c9v0PtnSz/HDp72o38wOfYIOPrQdv+KsAtPxyCV6PP4DQw5P93OvyQ4FO/0hC16NvMfybDK8wqdfvhXhFOwD+Qp2Qvt8A8Od6K539FQBfRKKVP/ABOz/ypXRFx/l46cZToLW/Ec99jZj9RIxvIgC+lE8+4tY3A49Iu+LJV5Abx3pZfGBZZj7oCaLg8En49THV/iGV7XyqETlfn3mytEsRyG0JJXhUtaMlqTgoRdH1HUuAxxS6ntl69pU27VdthcELbjkmAEi144mzPgp/FOIRla4nLjhQi0+WdjLIcW8ku2M2ILps7UHq3EGiYpdA215LCfwNXNL1/mviv8EDrc2LAA+01itrfAYpc++KG1s+pUhjM7XGd0C6/c5HnTejKltTF/nptaLAytJOcDnnLr6hDzxtHrK4bLl4z7GwduGvGUZsfzFTLh7T2Oce1Q7o/NyDfUqZxBw+FdiHpEm8cxdV4b4oZj3j9o4Gb65bDDzCSf5Vodd+5COLrBd9vmpT4hD/efKpdEdn+BwuJ59x3aLWHZ6TeMgdntNEAK5znsXxORxlfK2QU/G423kxJ+fT3lXzGM/mcPbxeU9qrmafed7DHq9/iNs5RFcXdL7BhTNUH7JwWAhf6loZu4Q0F7Ryy3fkjDrc+svP9s9JRCUmAL8kia+YkbrODyAvpQ9ppot3ZgBVJxr5UwCdeBOEl0I88klEqSgLHNb9fPgYQLuxvXn4xwYDHwNoVhZ+R5hfWxx8DKC9Mjv4/F39rhdaHADVu4/7IDq2DthTBM3qjeVVbZUz9hRBf/x9K1Ynx+wpgttrAPF1VoKxkU5GPzsL8s9XZ6So+LYKbT3b+fznepjlmqD5j/kXN6XN4d/+0QVPNQj+/Sg6WPV/4/DpmIXFPWlz+cPwQ+uHGhT+NG66ZeiKerP5pK2gAL5xIJdZeAP+ZtyqP0r1v+DbkOXTOuNXFv/y4gAfzGiGBOB3i+T7CV967XJ0s/QXW/daWeMtSNdaMOsM+G5ZvKQXEKWs+AI64zb5qEdoQAAAAABJRU5ErkJggg==" 
-                alt=""
-            />
-        </div>
-
-        <div class="post__body">
-            <div class="post_header">
-                <div class="post_headerText">
-                    <h3>James Bond
-                        <span class="post_headerSpecial">
-                            <span class="material-symbols-outlined post_badge"> verified </span>@007Bond                      </span>
-                    </h3>
+        
+                <div class="post__body">
+                    <div class="post_header">
+                        <div class="post_headerText">
+                            <h3>James Bond
+                                <span class="post_headerSpecial">
+                                    <span class="material-symbols-outlined post_badge"> verified </span>@007Bond</span>
+                            </h3>
+                        </div>
+                        <div class="post_headerDescription">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </div>
+                    </div>
+        
+                    <img src="https://staticg.sportskeeda.com/editor/2022/05/5810e-16530502990849-1920.jpg"
+                     alt=""
+                    />
+        
+                    <div class="post_footer">
+                        <span class="material-symbols-outlined"> chat_bubble </span>
+                        <span class="material-symbols-outlined"> repeat </span>                     
+                        <span class="material-symbols-outlined"> favorite_border </span> 
+                        <span class="material-symbols-outlined"> publish </span>                      
+                    </div>
+                    </div>
+                    </div>
+                    <div class="post">
+                        <div class="post_avatar">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAdVBMVEXjGTf////kIT3kHTvhACDjFTXiACfjETPiACvhACP/+Pj5ycz/+/vhABXgAA371tjylZrfAAD84OH+8PH5w8b2ub3nRFTzn6TpWmntcXvwiZD1tLj60dPqUV/oTVn95ebtfYf0p6rnPE3rY27ufIHlMkbqWWN5ydprAAAERElEQVR4nO3a6ZaiOhAAYBqzAQaUsGigQUR8/0ec4ILA2EKncDz33OTPnAEMH7FSKWJbtvXhZluGYAiGYAiGYAiGYAiGYAiGYAiGYAiGYAj/UwLGlDLiINWIau2/DmGUYvwvCJgSRKwm2e1lmkWel6vmeVGWyv0uaSx1kv7S8RsCpgz5zrfMvFCsv560tQi9TH47PmK/cMwmUMZZIePy2a3HrYxloS6fyZhFwBSx4hA9f/TnbS2iQ8HQHMUMAmW0qEJ3eAdXhIEXV+nm0tIq9oJQuEOjG1YFJRRKwIQfq3DQcxilp3PDEOdqHjjtjHDU3FD/Y835lMaji6sjJ6+HYoJAj5t+l2EsE77lvu9z1hxZ/0p2tNnlxJYncuAIN8eXIzFBYIeuJ+HJAnPfWRX7TZaXQrgSPS5E0hWizLPNvrAdn+NCeqL7qGQ/32GSgNm1o3V0aNRQ013qlV1UrIuua/bdhYFbeumOqi+mOUTXg+J1UE7FgiNVH7kkW98/p/ko7IV1G2FqidGpPD37/pbI9iP90dIgYDuvjoizOhvfpG3B1UBx8OSkyGrGUVPlNigclWGFkIrJH1JCfHlAFD8/u1aRiNBqIjdM5wWaRO7zO7Rtowxo8/N5N0qmEsMcws83UK0mpH55wQIEi9SDURBlGAR5fg8NNynup0WeB0FYDq52azLV/5w1wtl3vZZpndhUVQp+dj8Udmmo8h2HUTup024xc/fOZPezlilyf9DUQbe6hDz5/i8ZCLdLupPeBMXkGMxdrCm/PHS1fRx5EgDF41vfVu2BjE+uUbMJarWqA/W1P3qk9l+CdS8J0sT9CuqJ9el3BJWCySm2el2iv1JVyXtkKz6RlyuDBkEhUP+h+Dhbf0U9goXRTACgiHeqMSGdEXqLEnrL+K0dZj/3QgS6Gy0b7nlO+C9JwKtRPE5UBW8gWHxUz4e+ZkcAQjQkxHz6MwsT7kn43qTmhAAQ2ChF7zSjEUCgxWBKuK8r9bcQsD2Ix3CqPnsDwWKDFO1pJiYQwcn6hGq6NlmeQE59wukTo0CLPmGySn0HAVu9KeHqpmfYjhvpvT8H2qEAIji9FB1/hkB6KVq3XgESWG9K7LUnBIhAjw+CdnoGbgDzx76G7koNJWy7KRFup69+CwF1KTp7vZHyPgKRd8LrDa03Eh4vlrV+NAIJya2KFoAJASNgeqtaSv0VAvqrDPJu9QogGqGE6paeP0dge3B6hhLuVYt+vQIm4OYyJUQDiEYogV52fnP2OcJt6zeGRCOUcN372+jXK3DC9cWyhkwIKAHjlqD1I+1SBMtXU0Lobm4sQ2j3/nJAybQAoX2xzPQL+CUITMLqlQUI9Pz1pbvbtxAB26478fPXuwkWKktQblyAwD0PNiHgBJICXieXIbCD7vb3YgScJLBohBMsCpuS/+G/azIEQzAEQzAEQzAEQzAEQzCETxJWH272H4rTNoMOcPJJAAAAAElFTkSuQmCC" 
+                            alt=""
+                        />
+                    </div>
+            
+                    <div class="post__body">
+                        <div class="post_header">
+                            <div class="post_headerText">
+                                <h3>Tesla Clone
+                                    <span class="post_headerSpecial">
+                                        <span class="material-symbols-outlined post_badge"> verified </span>@TClone                      </span>
+                                </h3>
+                            </div>
+                            <div class="post_headerDescription">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </div>
+                        </div>
+            
+                        <img src="https://i.insider.com/5d308dc19e075556e379ced6?width=600&format=jpeg&auto=webp"
+                         alt=""
+                        />
+            
+                        <div class="post_footer">
+                            <span class="material-symbols-outlined"> chat_bubble </span>
+                            <span class="material-symbols-outlined"> repeat </span>                 
+                            <span class="material-symbols-outlined"> favorite_border </span>                
+                            <span class="material-symbols-outlined"> publish </span>                     
+                        </div>
+                        </div>
+                        </div>
+                               <div class="post">
+                    <div class="post_avatar">
+                        <img src="data:image/jpeg;base64,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" 
+                        alt=""
+                    />
                 </div>
-                <div class="post_headerDescription">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        
+                <div class="post__body">
+                    <div class="post_header">
+                        <div class="post_headerText">
+                            <h3>Lora Craft
+                                <span class="post_headerSpecial">
+                                    <span class="material-symbols-outlined post_badge"> verified </span>@crafL                      </span>
+                            </h3>
+                        </div>
+                        <div class="post_headerDescription">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </div>
+                    </div>
+        
+                    <img src="https://i.pinimg.com/736x/d4/f2/f5/d4f2f562301500058f8b0aa852075366--laura-croft-tomb-raider-lara-croft.jpg"
+                     alt=""
+                    />
+        
+                    <div class="post_footer">
+                        <span class="material-symbols-outlined"> chat_bubble </span>
+                        <span class="material-symbols-outlined"> repeat </span>                  
+                        <span class="material-symbols-outlined"> favorite_border </span>                    
+                        <span class="material-symbols-outlined"> publish </span>                   
+                    
+                    </div>
+                    </div>
+                </div>
+                <div class="footer_post">
+            
+                    <div class="footer_widgetContainer">
+                        <br>
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sunsets don&#39;t get much better than this one over <a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw">@GrandTetonNPS</a>.
+                             <a href="https://twitter.com/hashtag/nature?src=hash&amp;ref_src=twsrc%5Etfw">#nature</a> <a href="https://twitter.com/hashtag/sunset?src=hash&amp;ref_src=twsrc%5Etfw">#sunset</a> <a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a></p>&mdash; 
+                             US Department of the Interior (@Interior) <a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw">May 5, 2014</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                             <br>
+                             <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sunsets don&#39;t get much better than this one over <a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw">@GrandTetonNPS</a>.
+                                <a href="https://twitter.com/hashtag/nature?src=hash&amp;ref_src=twsrc%5Etfw">#nature</a> <a href="https://twitter.com/hashtag/sunset?src=hash&amp;ref_src=twsrc%5Etfw">#sunset</a> <a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a></p>&mdash; 
+                                US Department of the Interior (@Interior) <a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw">May 5, 2014</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
                 </div>
             </div>
+            <div class="searcher">
+                <div class="widgets_input">
+                <span class="material-symbols-outlined widgets__searchicon"> search </span>
+                <input type="text" placeholder="search Twitter">
+            </div>
+        <div class="layout__right-sidebar-container">
+            <div class="layout__right-sidebar">
+            <div class="trends-for-you">
+                <div class="trends-for-you__element">
+                    <div class="trends-for-you__heading">
+                        Trends for you
+                    </div>
+                </div>
+                <div class="trends-for-you__element">
+                    <div class="trends-for-you__meta-information">
+                        Trending in South Africa
+                    </div>
+                    <div class="trends-for-you__trend-name">
+                        #IPhone14
+                    </div>
+                    <div class="trends-for-you__meta-information">
+                        155m Tweets
+                    </div>
+                </div>
+                <div class="trends-for-you__element">
+                    <div class="trends-for-you__meta-information">
+                        Trending in United Kingdom
+                    </div>
+                    <div class="trends-for-you__trend-name">
+                        #News
+                    </div>
+                    <div class="trends-for-you__meta-information">
+                        2,800 Tweets
+                    </div>
+                </div>
 
-            <img src="https://staticg.sportskeeda.com/editor/2022/05/5810e-16530502990849-1920.jpg"
-             alt=""
-            />
+                <div class="trends-for-you__element">
+                    <div class="trends-for-you__meta-information">
+                        Trending in Austria
+                    </div>
+                    <div class="trends-for-you__trend-name">
+                        #Farming
+                    </div>
+                    <div class="trends-for-you__meta-information">
+                        256m Tweets
+                    </div>
+                </div>
+                <div class="trends-for-you__element">
 
-            <div class="post_footer">
-                <span class="material-symbols-outlined"> chat_bubble </span>
-                <span class="material-symbols-outlined"> repeat </span>                     
-                <span class="material-symbols-outlined"> favorite_border </span> 
-                <span class="material-symbols-outlined"> publish </span>                      
+                </div>
             </div>
-            </div>
-            </div>
-            <div class="post">
-                <div class="post_avatar">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAdVBMVEXjGTf////kIT3kHTvhACDjFTXiACfjETPiACvhACP/+Pj5ycz/+/vhABXgAA371tjylZrfAAD84OH+8PH5w8b2ub3nRFTzn6TpWmntcXvwiZD1tLj60dPqUV/oTVn95ebtfYf0p6rnPE3rY27ufIHlMkbqWWN5ydprAAAERElEQVR4nO3a6ZaiOhAAYBqzAQaUsGigQUR8/0ec4ILA2EKncDz33OTPnAEMH7FSKWJbtvXhZluGYAiGYAiGYAiGYAiGYAiGYAiGYAiGYAj/UwLGlDLiINWIau2/DmGUYvwvCJgSRKwm2e1lmkWel6vmeVGWyv0uaSx1kv7S8RsCpgz5zrfMvFCsv560tQi9TH47PmK/cMwmUMZZIePy2a3HrYxloS6fyZhFwBSx4hA9f/TnbS2iQ8HQHMUMAmW0qEJ3eAdXhIEXV+nm0tIq9oJQuEOjG1YFJRRKwIQfq3DQcxilp3PDEOdqHjjtjHDU3FD/Y835lMaji6sjJ6+HYoJAj5t+l2EsE77lvu9z1hxZ/0p2tNnlxJYncuAIN8eXIzFBYIeuJ+HJAnPfWRX7TZaXQrgSPS5E0hWizLPNvrAdn+NCeqL7qGQ/32GSgNm1o3V0aNRQ013qlV1UrIuua/bdhYFbeumOqi+mOUTXg+J1UE7FgiNVH7kkW98/p/ko7IV1G2FqidGpPD37/pbI9iP90dIgYDuvjoizOhvfpG3B1UBx8OSkyGrGUVPlNigclWGFkIrJH1JCfHlAFD8/u1aRiNBqIjdM5wWaRO7zO7Rtowxo8/N5N0qmEsMcws83UK0mpH55wQIEi9SDURBlGAR5fg8NNynup0WeB0FYDq52azLV/5w1wtl3vZZpndhUVQp+dj8Udmmo8h2HUTup024xc/fOZPezlilyf9DUQbe6hDz5/i8ZCLdLupPeBMXkGMxdrCm/PHS1fRx5EgDF41vfVu2BjE+uUbMJarWqA/W1P3qk9l+CdS8J0sT9CuqJ9el3BJWCySm2el2iv1JVyXtkKz6RlyuDBkEhUP+h+Dhbf0U9goXRTACgiHeqMSGdEXqLEnrL+K0dZj/3QgS6Gy0b7nlO+C9JwKtRPE5UBW8gWHxUz4e+ZkcAQjQkxHz6MwsT7kn43qTmhAAQ2ChF7zSjEUCgxWBKuK8r9bcQsD2Ix3CqPnsDwWKDFO1pJiYQwcn6hGq6NlmeQE59wukTo0CLPmGySn0HAVu9KeHqpmfYjhvpvT8H2qEAIji9FB1/hkB6KVq3XgESWG9K7LUnBIhAjw+CdnoGbgDzx76G7koNJWy7KRFup69+CwF1KTp7vZHyPgKRd8LrDa03Eh4vlrV+NAIJya2KFoAJASNgeqtaSv0VAvqrDPJu9QogGqGE6paeP0dge3B6hhLuVYt+vQIm4OYyJUQDiEYogV52fnP2OcJt6zeGRCOUcN372+jXK3DC9cWyhkwIKAHjlqD1I+1SBMtXU0Lobm4sQ2j3/nJAybQAoX2xzPQL+CUITMLqlQUI9Pz1pbvbtxAB26478fPXuwkWKktQblyAwD0PNiHgBJICXieXIbCD7vb3YgScJLBohBMsCpuS/+G/azIEQzAEQzAEQzAEQzAEQzCETxJWH272H4rTNoMOcPJJAAAAAElFTkSuQmCC" 
+            <div class="who-to-follow">
+                <div class="who-to-follow__element">
+                    <div class="who-to-follow__heading">
+                        who to follow
+                    </div>
+                </div>
+                <div class="who-to-follow__element">
+                    <img class="post_avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB7CAMAAACFMMQJAAAAY1BMVEX///8HCQgAAADe3t64uLj6+vqTk5Ofn5+kpKTHx8eFhYXr6+t/f389PT0ABQPY2NgwMDBxcXGZmZnOzs43NzdJSUnx8fGLi4smJiYdHR1hYWEVFRVQUFBra2uwsLB5eXlZWVkaT/i9AAADyklEQVRogcWb24KqMAxFaQAVuYsoF2///5XTggedcY6mYXfYDz7OSkubprsZzxPJDzbrTVB5XZ9UXhXK/ohUwZ5GNan+Sc594v8VOvajdUuZMsqI9C/pYLLd38zAtjGjVt9EJpBT7B4eX84/0I8YascfIN4ULwN/5tPJKf74hj0GcPYiZ/Tq9h5u+ElzcURPPo19/ACUu4DHewZ8CKBwgV/VTLyiqtzC8TsuXVFKBTwFXbiTr/kZrcH0oGDTTQDqAKWvOKv+mQ/dfpf7CcPHb70c9v0PtnSz/HDp72o38wOfYIOPrQdv+KsAtPxyCV6PP4DQw5P93OvyQ4FO/0hC16NvMfybDK8wqdfvhXhFOwD+Qp2Qvt8A8Od6K539FQBfRKKVP/ABOz/ypXRFx/l46cZToLW/Ec99jZj9RIxvIgC+lE8+4tY3A49Iu+LJV5Abx3pZfGBZZj7oCaLg8En49THV/iGV7XyqETlfn3mytEsRyG0JJXhUtaMlqTgoRdH1HUuAxxS6ntl69pU27VdthcELbjkmAEi144mzPgp/FOIRla4nLjhQi0+WdjLIcW8ku2M2ILps7UHq3EGiYpdA215LCfwNXNL1/mviv8EDrc2LAA+01itrfAYpc++KG1s+pUhjM7XGd0C6/c5HnTejKltTF/nptaLAytJOcDnnLr6hDzxtHrK4bLl4z7GwduGvGUZsfzFTLh7T2Oce1Q7o/NyDfUqZxBw+FdiHpEm8cxdV4b4oZj3j9o4Gb65bDDzCSf5Vodd+5COLrBd9vmpT4hD/efKpdEdn+BwuJ59x3aLWHZ6TeMgdntNEAK5znsXxORxlfK2QU/G423kxJ+fT3lXzGM/mcPbxeU9qrmafed7DHq9/iNs5RFcXdL7BhTNUH7JwWAhf6loZu4Q0F7Ryy3fkjDrc+svP9s9JRCUmAL8kia+YkbrODyAvpQ9ppot3ZgBVJxr5UwCdeBOEl0I88klEqSgLHNb9fPgYQLuxvXn4xwYDHwNoVhZ+R5hfWxx8DKC9Mjv4/F39rhdaHADVu4/7IDq2DthTBM3qjeVVbZUz9hRBf/x9K1Ynx+wpgttrAPF1VoKxkU5GPzsL8s9XZ6So+LYKbT3b+fznepjlmqD5j/kXN6XN4d/+0QVPNQj+/Sg6WPV/4/DpmIXFPWlz+cPwQ+uHGhT+NG66ZeiKerP5pK2gAL5xIJdZeAP+ZtyqP0r1v+DbkOXTOuNXFv/y4gAfzGiGBOB3i+T7CV967XJ0s/QXW/daWeMtSNdaMOsM+G5ZvKQXEKWs+AI64zb5qEdoQAAAAABJRU5ErkJggg==" 
                     alt=""
                 />
-            </div>
-    
-            <div class="post__body">
-                <div class="post_header">
-                    <div class="post_headerText">
-                        <h3>Tesla Clone
-                            <span class="post_headerSpecial">
-                                <span class="material-symbols-outlined post_badge"> verified </span>@TClone                      </span>
-                        </h3>
+                <div class="who-to-follow__content">
+                    <div>
+                        <div class="who-to-follow__author-name">
+                            Becky (& Chris)
+                        </div>
+                        <div class="who-to-follow__author-slug">
+                            @beckiandchris
+                        </div>
                     </div>
-                    <div class="post_headerDescription">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <div class="who-to-follow__button">
+                        Follow
                     </div>
                 </div>
-    
-                <img src="https://i.insider.com/5d308dc19e075556e379ced6?width=600&format=jpeg&auto=webp"
-                 alt=""
+                </div>
+            </div>
+            <div class="who-to-follow">
+                <div class="who-to-follow__element">
+                </div>
+                <div class="who-to-follow__element">
+                    <img class="post_avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB7CAMAAACFMMQJAAAAY1BMVEX///8HCQgAAADe3t64uLj6+vqTk5Ofn5+kpKTHx8eFhYXr6+t/f389PT0ABQPY2NgwMDBxcXGZmZnOzs43NzdJSUnx8fGLi4smJiYdHR1hYWEVFRVQUFBra2uwsLB5eXlZWVkaT/i9AAADyklEQVRogcWb24KqMAxFaQAVuYsoF2///5XTggedcY6mYXfYDz7OSkubprsZzxPJDzbrTVB5XZ9UXhXK/ohUwZ5GNan+Sc594v8VOvajdUuZMsqI9C/pYLLd38zAtjGjVt9EJpBT7B4eX84/0I8YascfIN4ULwN/5tPJKf74hj0GcPYiZ/Tq9h5u+ElzcURPPo19/ACUu4DHewZ8CKBwgV/VTLyiqtzC8TsuXVFKBTwFXbiTr/kZrcH0oGDTTQDqAKWvOKv+mQ/dfpf7CcPHb70c9v0PtnSz/HDp72o38wOfYIOPrQdv+KsAtPxyCV6PP4DQw5P93OvyQ4FO/0hC16NvMfybDK8wqdfvhXhFOwD+Qp2Qvt8A8Od6K539FQBfRKKVP/ABOz/ypXRFx/l46cZToLW/Ec99jZj9RIxvIgC+lE8+4tY3A49Iu+LJV5Abx3pZfGBZZj7oCaLg8En49THV/iGV7XyqETlfn3mytEsRyG0JJXhUtaMlqTgoRdH1HUuAxxS6ntl69pU27VdthcELbjkmAEi144mzPgp/FOIRla4nLjhQi0+WdjLIcW8ku2M2ILps7UHq3EGiYpdA215LCfwNXNL1/mviv8EDrc2LAA+01itrfAYpc++KG1s+pUhjM7XGd0C6/c5HnTejKltTF/nptaLAytJOcDnnLr6hDzxtHrK4bLl4z7GwduGvGUZsfzFTLh7T2Oce1Q7o/NyDfUqZxBw+FdiHpEm8cxdV4b4oZj3j9o4Gb65bDDzCSf5Vodd+5COLrBd9vmpT4hD/efKpdEdn+BwuJ59x3aLWHZ6TeMgdntNEAK5znsXxORxlfK2QU/G423kxJ+fT3lXzGM/mcPbxeU9qrmafed7DHq9/iNs5RFcXdL7BhTNUH7JwWAhf6loZu4Q0F7Ryy3fkjDrc+svP9s9JRCUmAL8kia+YkbrODyAvpQ9ppot3ZgBVJxr5UwCdeBOEl0I88klEqSgLHNb9fPgYQLuxvXn4xwYDHwNoVhZ+R5hfWxx8DKC9Mjv4/F39rhdaHADVu4/7IDq2DthTBM3qjeVVbZUz9hRBf/x9K1Ynx+wpgttrAPF1VoKxkU5GPzsL8s9XZ6So+LYKbT3b+fznepjlmqD5j/kXN6XN4d/+0QVPNQj+/Sg6WPV/4/DpmIXFPWlz+cPwQ+uHGhT+NG66ZeiKerP5pK2gAL5xIJdZeAP+ZtyqP0r1v+DbkOXTOuNXFv/y4gAfzGiGBOB3i+T7CV967XJ0s/QXW/daWeMtSNdaMOsM+G5ZvKQXEKWs+AI64zb5qEdoQAAAAABJRU5ErkJggg==" 
+                    alt=""
                 />
-    
-                <div class="post_footer">
-                    <span class="material-symbols-outlined"> chat_bubble </span>
-                    <span class="material-symbols-outlined"> repeat </span>                 
-                    <span class="material-symbols-outlined"> favorite_border </span>                
-                    <span class="material-symbols-outlined"> publish </span>                     
+                <div class="who-to-follow__content">
+                    <div>
+                        <div class="who-to-follow__author-name">
+                            Becky (& Chris)
+                        </div>
+                        <div class="who-to-follow__author-slug">
+                            @beckiandchris
+                        </div>
+                    </div>
+                    <div class="who-to-follow__button">
+                        Follow
+                    </div>
                 </div>
-                </div>
-                </div>
-                       <div class="post">
-            <div class="post_avatar">
-                <img src="data:image/jpeg;base64,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" 
-                alt=""
-            />
-        </div>
-
-        <div class="post__body">
-            <div class="post_header">
-                <div class="post_headerText">
-                    <h3>Lora Craft
-                        <span class="post_headerSpecial">
-                            <span class="material-symbols-outlined post_badge"> verified </span>@crafL                      </span>
-                    </h3>
-                </div>
-                <div class="post_headerDescription">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </div>
             </div>
 
-            <img src="https://i.pinimg.com/736x/d4/f2/f5/d4f2f562301500058f8b0aa852075366--laura-croft-tomb-raider-lara-croft.jpg"
-             alt=""
-            />
-
-            <div class="post_footer">
-                <span class="material-symbols-outlined"> chat_bubble </span>
-                <span class="material-symbols-outlined"> repeat </span>                  
-                <span class="material-symbols-outlined"> favorite_border </span>                    
-                <span class="material-symbols-outlined"> publish </span>                   
-            </div>
-            </div>
-            </div>
         </div>
     </div>
-    </div>
-    <div class="widgets">
-        <div class="widgets_input">
-            <span class="material-symbols-outlined widgets__searchicon"> search </span>
-            <input type="text" placeholder="search Twitter">
-        </div>
-
-        <div class="widgets_widgetContainer">
-            <h2>Trends for you</h2>
-            <br>
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sunsets don&#39;t get much better than this one over <a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw">@GrandTetonNPS</a>.
-                 <a href="https://twitter.com/hashtag/nature?src=hash&amp;ref_src=twsrc%5Etfw">#nature</a> <a href="https://twitter.com/hashtag/sunset?src=hash&amp;ref_src=twsrc%5Etfw">#sunset</a> <a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a></p>&mdash; 
-                 US Department of the Interior (@Interior) <a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw">May 5, 2014</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                 <br>
-                 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sunsets don&#39;t get much better than this one over <a href="https://twitter.com/GrandTetonNPS?ref_src=twsrc%5Etfw">@GrandTetonNPS</a>.
-                    <a href="https://twitter.com/hashtag/nature?src=hash&amp;ref_src=twsrc%5Etfw">#nature</a> <a href="https://twitter.com/hashtag/sunset?src=hash&amp;ref_src=twsrc%5Etfw">#sunset</a> <a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a></p>&mdash; 
-                    US Department of the Interior (@Interior) <a href="https://twitter.com/Interior/status/463440424141459456?ref_src=twsrc%5Etfw">May 5, 2014</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
 </body>
 </html>
