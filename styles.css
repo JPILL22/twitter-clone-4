@@ -333,7 +333,88 @@ button.tweetBox__tweetButton:hover {
     margin-top: 10px;
     margin-right: 25%;
     cursor: pointer;
+    font-size: 5px;
 }
+
+.chat_bubble {
+    color: #839297;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.post_footer .chat_bubble .material-symbols-outlined:hover {
+    border-radius: 100%;
+    background-color: #a4d1ee;
+}
+
+.chat_bubble h4 {
+    padding-left: 9px;
+}
+
+
+.chat_bubble:hover {
+    color: #3084bd;
+}
+
+.repeat {
+    color: #839297;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.post_footer .repeat .material-symbols-outlined:hover {
+    border-radius: 100%;
+    background-color: #a4eeb4;
+}
+
+.repeat h4 {
+    padding-left: 9px;
+}
+
+
+.repeat:hover {
+    color: #58bd30;
+}
+
+.fav {
+    color: #839297;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.post_footer .fav .material-symbols-outlined:hover {
+    border-radius: 100%;
+    background-color: #eea4c6;
+}
+
+.fav h4 {
+    padding-left: 9px;
+}
+
+
+.fav:hover {
+    color: #bd3072;
+}
+
+.publish {
+    color: #839297;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.post_footer .publish .material-symbols-outlined:hover {
+    border-radius: 100%;
+    background-color: #a4d3ee;
+}
+
 .post_badge {
     font-size: 14px !important;
     color: #1d9bf0;
