@@ -147,9 +147,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-
     border: none;
     color: #000000;
+    background-color: white;
     font-weight: 900;
     border-radius: 56px;
     height: 59px;
@@ -191,7 +191,7 @@
 }
 
 .Account_profile:hover {
-    background-color: #c2cbce;
+    background-color: #d8e0e2;
 }
 
 .post_avatar img {
@@ -370,4 +370,10 @@ button.tweetBox__tweetButton:hover {
     padding-left: 20px;
     padding-right: 100px;
     max-width: fit-content;
+}
+
+.open-button {
+    outline: none;
+    background-color: #ffffff;
+    border: none;
 }
